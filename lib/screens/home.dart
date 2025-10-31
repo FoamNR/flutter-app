@@ -1,3 +1,4 @@
+import 'package:communityapp/widgets/navbar_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,6 +13,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      bottomNavigationBar: MyNavBar(
+        currentIndex: 0, 
+        onTap: (index){
+
+        }
+        ),
       body: SafeArea(
         child: Center(
           child: Column(
