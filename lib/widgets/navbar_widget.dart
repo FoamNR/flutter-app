@@ -16,7 +16,7 @@ class MyNavBar extends StatelessWidget {
       selectedItemColor: Colors.blueAccent,
       unselectedItemColor: Colors.grey,
       showUnselectedLabels: true,
-      //backgroundColor: Colors.,
+      backgroundColor: Colors.white,
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
         BottomNavigationBarItem(icon: Icon(Icons.report_gmailerrorred), label: 'Report'),

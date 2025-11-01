@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      //backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
           "Home",
@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
         currentIndex: 0,
         onTap: (index) {},
       ),
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -78,8 +78,8 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.purple,
                       ),
                       QuickAction(
-                        icon: Icons.account_balance_wallet,
-                        label: 'ค่าส่วนกลาง',
+                        icon: Icons.newspaper,
+                        label: 'ข่าวสาร',
                         color: Colors.pink,
                       ),
                     ],
