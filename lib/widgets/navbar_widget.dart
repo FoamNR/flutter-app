@@ -19,7 +19,7 @@ class MyNavBar extends StatelessWidget {
       //backgroundColor: Colors.,
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.report_problem), label: 'Report'),
+        BottomNavigationBarItem(icon: Icon(Icons.report_gmailerrorred), label: 'Report'),
         BottomNavigationBarItem(icon: Icon(Icons.event), label: 'Event'),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
       ],
