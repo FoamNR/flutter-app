@@ -1,4 +1,5 @@
 import 'package:communityapp/widgets/navbar_widget.dart';
+import 'package:communityapp/widgets/quick_action_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,31 +14,80 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar: MyNavBar(
-        currentIndex: 0, 
-        onTap: (index){
-
-        }
+      appBar: AppBar(
+        title: const Text(
+          "Home",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
+        backgroundColor: Colors.blue,
+      ),
+      bottomNavigationBar: MyNavBar(
+        currentIndex: 0,
+        onTap: (index) {},
+      ),
       body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min, // keeps column centered tightly
-            children: [
-              Image.network(
-                'https://scontent.fbkk22-6.fna.fbcdn.net/v/t39.30808-6/498529393_1821459991732821_2940295471315935585_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=uU7mGatouQEQ7kNvwG8fU2g&_nc_oc=AdlnaXSDwOKGVG8K-otCh3MtB7MVItOXPB5gWJMW4DNf2GYtdjUfL7ojr1R2lt9JWtdYi84tvjEROmEzJ1MxfE1w&_nc_zt=23&_nc_ht=scontent.fbkk22-6.fna&_nc_gid=AHbmI6j4qPY4yyU6NbNMmw&oh=00_AfftIWzTAx2NlluqjguuuH8kofQhmSGOpQGqERZAtopBCQ&oe=6908D76C',
-                width: 300,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.3),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
               ),
-              const SizedBox(height: 16),
-              const Text(
-                "แฟนสาวสุดสวย",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'เมนูด่วน',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      QuickAction(
+                        icon: Icons.report_problem,
+                        label: 'แจ้งปัญหา',
+                        color: Colors.orange,
+                        onTap: () {
+                          // ตัวอย่าง: Navigator.push(context, MaterialPageRoute(builder: (_) => ReportPage()));
+                        
+                        },
+                      ),
+                      QuickAction(
+                        icon: Icons.event,
+                        label: 'กิจกรรม',
+                        color: Colors.green,
+                      ),
+                      QuickAction(
+                        icon: Icons.people,
+                        label: 'ติดต่อ',
+                        color: Colors.purple,
+                      ),
+                      QuickAction(
+                        icon: Icons.account_balance_wallet,
+                        label: 'ค่าส่วนกลาง',
+                        color: Colors.pink,
+                      ),
+                    ],
+                  )
+                ],
               ),
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );
